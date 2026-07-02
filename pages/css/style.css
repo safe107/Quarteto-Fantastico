@@ -10,7 +10,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
     color: white;
     background:black;
 }
@@ -48,32 +48,38 @@ body {
 /* Conteúdo */
 
 main {
-    height: 100vh;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
 
     justify-content: center;
     align-items: center;
+
+    padding: 20px;
+    text-align: center;
 }
 
 /* Título */
 
 h1 {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 6vw, 3rem);
     margin-bottom: 10px;
 }
 
 /* Subtítulo */
 
 main p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     margin-bottom: 40px;
 }
 
 .cards {
 
     display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
 
     gap: 40px;
 
@@ -165,4 +171,39 @@ main p {
 
     box-shadow: 0 0 20px #a855f7;
 
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 768px) {
+
+    .cards {
+        gap: 25px;
+    }
+
+    .card img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    #music-button {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .cards {
+        gap: 15px;
+    }
+
+    .card img {
+        width: 100px;
+        height: 100px;
+    }
 }
