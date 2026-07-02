@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#FFF8FB;
+
+    font-family:'Quicksand',sans-serif;
+
+    color:#555;
+
+    background-image:
+    radial-gradient(#ffd6ea 1.5px, transparent 1.5px);
+
+    background-size:35px 35px;
+
+}
+
+main{
+
+    width:1100px;
+
+    margin:40px auto;
+
+    position:relative;
+
+}
+
+.banner{
+
+    background:white;
+
+    border:4px dashed #FFC8DD;
+
+    border-radius:25px;
+
+    padding:40px;
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.banner h1{
+
+    color:#FF69B4;
+
+    font-size:45px;
+
+    margin-bottom:10px;
+
+}
+
+.banner p{
+
+    color:#777;
+
+}
+
+.sobre{
+
+    background:white;
+
+    border:3px solid #FFD6EA;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    display:flex;
+
+    gap:40px;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.sobre img{
+
+    width:250px;
+
+    border-radius:20px;
+
+    border:8px solid #FFEAF4;
+
+    box-shadow:0 0 20px rgba(255,105,180,.4);
+
+}
+
+.texto{
+
+    flex:1;
+
+}
+
+.texto h2{
+
+    color:#FF69B4;
+
+    margin-bottom:20px;
+
+}
+
+.texto p{
+
+    line-height:1.8;
+
+}
+
+.card-info{
+
+    margin-top:25px;
+
+    background:#FFF4FA;
+
+    border:2px dashed #FFC8DD;
+
+    border-radius:15px;
+
+    padding:20px;
+
+}
+
+.galeria{
+
+    background:white;
+
+    border:3px solid #FFD6EA;
+
+    border-radius:25px;
+
+    padding:30px;
+
+}
+
+.galeria h2{
+
+    text-align:center;
+
+    color:#FF69B4;
+
+    margin-bottom:30px;
+
+}
+
+.fotos{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.fotos img{
+
+    width:100%;
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:15px;
+
+    border:2px solid #FFD6EA;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.fotos img:hover{
+
+    transform:rotate(-2deg) scale(1.05);
+
+    box-shadow:0 0 20px rgba(255,105,180,.4);
+
+}
+
+.sidebar{
+
+    position:fixed;
+
+    right:40px;
+
+    top:120px;
+
+    width:220px;
+
+    background:white;
+
+    border:3px dashed #FFC8DD;
+
+    border-radius:20px;
+
+    padding:20px;
+
+}
+
+.sidebar h3{
+
+    text-align:center;
+
+    color:#FF69B4;
+
+    margin-bottom:15px;
+
+}
+
+.sidebar hr{
+
+    margin:15px 0;
+
+    border:none;
+
+    border-top:1px dashed pink;
+
+}
+
+.gif-gatinho{
+
+    margin-top:20px;
+
+    width:100%;
+
+    height:140px;
+
+    border:2px dashed pink;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#FF69B4;
+
+}
+
+/* COLOQUE O GIF DENTRO DESSA DIV */
+
+.voltar{
+
+    display:block;
+
+    width:200px;
+
+    margin:50px auto;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:#FF69B4;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    transition:.3s;
+
+}
+
+.voltar:hover{
+
+    background:#FF85C1;
+
+}
+
+footer{
+
+    text-align:center;
+
+    color:#777;
+
+    margin-bottom:50px;
+
+}
+
+footer p{
+
+    margin:5px;
+
+}
+
+.gif-gatinho{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:20px;
+
+    height:120px;
+
+    overflow:hidden;
+
+}
+
+.gif-gatinho img{
+
+    max-width:100%;
+
+    max-height:100%;
+
+    object-fit:contain;
+
+}
