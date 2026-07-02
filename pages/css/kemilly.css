@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;600;700&display=swap');
 
 *{
     margin:0;
@@ -7,389 +7,555 @@
 }
 
 body{
-
     background:#FFF8FB;
-
     font-family:'Quicksand',sans-serif;
-
     color:#555;
-
-    background-image:
-    radial-gradient(#ffd6ea 1.5px, transparent 1.5px);
-
+    background-image: radial-gradient(#ffd6ea 1.5px, transparent 1.5px);
     background-size:35px 35px;
-
 }
 
 main{
-
     width:100%;
-
     max-width:1300px;
-
     margin:40px auto;
-
     padding:0 20px;
-
     position:relative;
 
     display:grid;
-
     grid-template-columns: 1fr 280px;
-
     grid-template-areas:
         "banner  banner"
         "sobre   sobre"
         "galeria sidebar"
+        "diario  sidebar"
         "voltar  voltar"
         "musica  musica"
         "footer  footer";
-
     gap:30px;
-
 }
 
+/* ===== Banner ===== */
+
 .banner{
-
     grid-area: banner;
-
     background:white;
-
     border:4px dashed #FFC8DD;
-
     border-radius:25px;
-
-    padding:40px;
-
+    padding:35px 40px;
     text-align:center;
+    overflow:hidden;
+}
 
+.banner-top{
+    font-size:13px;
+    color:#FF9AC6;
+    letter-spacing:1px;
+    margin-bottom:14px;
 }
 
 .banner h1{
-
+    font-family:'Patrick Hand', cursive;
     color:#FF69B4;
-
-    font-size:45px;
-
-    margin-bottom:10px;
-
+    font-size:48px;
+    letter-spacing:1px;
 }
 
 .banner p{
-
-    color:#777;
-
+    color:#888;
+    margin-top:6px;
+    font-style:italic;
 }
+
+.marquee{
+    margin-top:20px;
+    border-top:1px dashed #FFC8DD;
+    border-bottom:1px dashed #FFC8DD;
+    padding:8px 0;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.marquee-track{
+    display:inline-block;
+    padding-left:100%;
+    color:#FF69B4;
+    font-size:13px;
+    font-weight:600;
+    animation: marquee 22s linear infinite;
+}
+
+@keyframes marquee{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-100%); }
+}
+
+/* ===== Sobre ===== */
 
 .sobre{
-
     grid-area: sobre;
-
     background:white;
-
     border:3px solid #FFD6EA;
-
     border-radius:25px;
-
     padding:30px;
-
     display:flex;
-
     gap:40px;
-
     align-items:center;
-
 }
 
-.sobre img{
+.foto-frame{
+    position:relative;
+    flex-shrink:0;
+}
 
+.foto-frame img{
     width:250px;
+    border-radius:12px;
+    border:8px solid white;
+    box-shadow:0 4px 18px rgba(0,0,0,.15);
+    transform:rotate(-3deg);
+    display:block;
+}
 
-    border-radius:20px;
+.tape{
+    position:absolute;
+    width:70px;
+    height:24px;
+    background:rgba(255,214,234,.85);
+    border:1px solid rgba(255,153,196,.5);
+    box-shadow:0 2px 4px rgba(0,0,0,.08);
+}
 
-    border:8px solid #FFEAF4;
+.tape-1{
+    top:-10px;
+    left:20px;
+    transform:rotate(-8deg);
+}
 
-    box-shadow:0 0 20px rgba(255,105,180,.4);
-
+.tape-2{
+    bottom:-10px;
+    right:10px;
+    transform:rotate(6deg);
 }
 
 .texto{
-
     flex:1;
-
 }
 
 .texto h2{
-
+    font-family:'Patrick Hand', cursive;
     color:#FF69B4;
-
-    margin-bottom:20px;
-
+    font-size:26px;
+    margin-bottom:16px;
 }
 
 .texto p{
-
     line-height:1.8;
-
 }
 
-.card-info{
-
-    margin-top:25px;
-
+.status-table{
+    margin-top:22px;
+    width:100%;
+    border-collapse:collapse;
     background:#FFF4FA;
-
     border:2px dashed #FFC8DD;
-
     border-radius:15px;
-
-    padding:20px;
-
+    overflow:hidden;
 }
+
+.status-table td{
+    padding:10px 16px;
+    font-size:14px;
+    border-bottom:1px dashed #FFE0EF;
+}
+
+.status-table tr:last-child td{
+    border-bottom:none;
+}
+
+.status-table td:first-child{
+    font-weight:600;
+    color:#FF69B4;
+    width:40%;
+}
+
+/* ===== Diário (posts) ===== */
+
+.diario{
+    grid-area: diario;
+    background:white;
+    border:3px solid #FFD6EA;
+    border-radius:25px;
+    padding:30px;
+}
+
+.diario h2{
+    font-family:'Patrick Hand', cursive;
+    color:#FF69B4;
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.post{
+    border:1px dashed #FFC8DD;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:18px;
+    background:#FFFBFD;
+}
+
+.post:last-child{
+    margin-bottom:0;
+}
+
+.post-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.post-data{
+    font-size:12px;
+    color:#FF9AC6;
+    background:#FFEAF4;
+    padding:3px 10px;
+    border-radius:20px;
+}
+
+.post-titulo{
+    font-family:'Patrick Hand', cursive;
+    font-size:19px;
+    color:#c9457e;
+}
+
+.post-texto{
+    line-height:1.7;
+    font-size:15px;
+}
+
+.post-foot{
+    margin-top:12px;
+    font-size:12px;
+    color:#aaa;
+    border-top:1px dashed #FFE0EF;
+    padding-top:10px;
+}
+
+/* ===== Galeria (Memories / scrapbook) ===== */
 
 .galeria{
-
     grid-area: galeria;
-
-    background:white;
-
+    position:relative;
+    background:
+        repeating-linear-gradient(0deg, rgba(255,214,234,.35) 0 1px, transparent 1px 32px),
+        repeating-linear-gradient(90deg, rgba(255,214,234,.35) 0 1px, transparent 1px 32px),
+        #fffdfe;
     border:3px solid #FFD6EA;
-
     border-radius:25px;
+    padding:40px 35px 30px;
+    overflow:hidden;
+}
 
-    padding:30px;
+.doodle{
+    position:absolute;
+    color:#FFC8DD;
+    pointer-events:none;
+    user-select:none;
+}
 
+.doodle-star{
+    top:18px;
+    left:26px;
+    font-size:22px;
+    transform:rotate(-15deg);
+}
+
+.doodle-heart{
+    top:24px;
+    right:32px;
+    font-size:26px;
+    color:#FF9AC6;
+    transform:rotate(12deg);
 }
 
 .galeria h2{
-
     text-align:center;
-
+    font-family:'Patrick Hand', cursive;
     color:#FF69B4;
-
-    margin-bottom:30px;
-
+    font-size:30px;
+    text-shadow: 2px 2px 0 #FFEAF4;
 }
 
-.fotos{
+.galeria-sub{
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    font-style:italic;
+    margin-bottom:38px;
+}
 
+.scrapbook{
     display:grid;
-
-    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
-
-    gap:25px;
-
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows:170px;
+    gap:34px 26px;
 }
 
-.fotos img{
-
-    width:100%;
-
+.polaroid{
+    position:relative;
     background:white;
-
-    padding:10px;
-
-    border-radius:15px;
-
-    border:2px solid #FFD6EA;
-
-    transition:.3s;
-
+    padding:12px 12px 34px;
+    box-shadow:0 6px 14px rgba(0,0,0,.12);
+    border-radius:3px;
+    transition:.25s ease;
     cursor:pointer;
-
 }
 
-.fotos img:hover{
-
-    transform:rotate(-2deg) scale(1.05);
-
-    box-shadow:0 0 20px rgba(255,105,180,.4);
-
+.polaroid.destaque{
+    grid-column: span 2;
+    grid-row: span 2;
+    padding:16px 16px 42px;
 }
+
+.polaroid.destaque figcaption{
+    font-size:18px;
+}
+
+.polaroid.destaque small{
+    display:block;
+    font-family:'Quicksand',sans-serif;
+    font-size:11px;
+    color:#bbb;
+    margin-top:4px;
+    font-style:italic;
+}
+
+.polaroid img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:2px;
+    filter:saturate(1.03);
+    transition:.3s ease;
+}
+
+.polaroid:hover img{
+    filter:saturate(1.15) brightness(1.03);
+}
+
+.polaroid figcaption{
+    font-family:'Patrick Hand', cursive;
+    text-align:center;
+    color:#c9457e;
+    font-size:15px;
+    margin-top:10px;
+}
+
+.polaroid .tape{
+    position:absolute;
+    top:-12px;
+    left:50%;
+    width:64px;
+    height:22px;
+    margin-left:-32px;
+    transform:rotate(-4deg);
+    z-index:2;
+    box-shadow:0 2px 4px rgba(0,0,0,.1);
+}
+
+.tape-rosa{ background:rgba(255,180,213,.85); }
+.tape-amarela{ background:rgba(255,229,160,.85); transform:rotate(5deg); }
+.tape-roxa{ background:rgba(216,180,254,.85); transform:rotate(-6deg); }
+
+.rot-1{ transform:rotate(-2deg); }
+.rot-2{ transform:rotate(3deg); }
+.rot-3{ transform:rotate(-2deg); }
+.rot-4{ transform:rotate(4deg); }
+.rot-5{ transform:rotate(-3deg); }
+.rot-6{ transform:rotate(2deg); }
+
+.polaroid:hover{
+    transform:rotate(0deg) scale(1.05) translateY(-6px);
+    box-shadow:0 14px 28px rgba(255,105,180,.35);
+    z-index:5;
+}
+
+.galeria-nota{
+    margin-top:34px;
+    text-align:center;
+    font-size:12px;
+    color:#bbb;
+    border-top:1px dashed #FFE0EF;
+    padding-top:16px;
+}
+
+.galeria-nota code{
+    background:#FFF4FA;
+    color:#c9457e;
+    padding:1px 6px;
+    border-radius:6px;
+    font-size:11px;
+}
+
+/* ===== Sidebar (sticky) ===== */
 
 .sidebar{
-
     grid-area: sidebar;
-
     width:100%;
-
     align-self:start;
-
     position:sticky;
-
     top:20px;
-
     background:white;
-
     border:3px dashed #FFC8DD;
-
     border-radius:20px;
-
     padding:20px;
-
 }
 
 .sidebar h3{
-
     text-align:center;
-
+    font-family:'Patrick Hand', cursive;
     color:#FF69B4;
-
+    font-size:19px;
     margin-bottom:15px;
-
 }
 
 .sidebar hr{
-
     margin:15px 0;
-
     border:none;
-
     border-top:1px dashed pink;
+}
 
+.counter{
+    display:flex;
+    justify-content:center;
+    gap:3px;
+}
+
+.counter span{
+    background:#2b0e1c;
+    color:#ff5fa2;
+    font-family:'Courier New', monospace;
+    font-weight:700;
+    font-size:18px;
+    width:22px;
+    text-align:center;
+    padding:4px 0;
+    border-radius:3px;
+    box-shadow: inset 0 0 4px rgba(255,95,162,.6);
+}
+
+.counter-label{
+    text-align:center;
+    font-size:11px;
+    color:#bbb;
+    margin-top:6px;
+    letter-spacing:1px;
+}
+
+.side-label{
+    font-size:13px;
+    color:#999;
+}
+
+.side-valor{
+    font-size:14px;
+    font-weight:600;
+    color:#c9457e;
+    margin-top:2px;
+}
+
+.top-amigos{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:12px;
+}
+
+.top-amigos img{
+    width:50px;
+    height:50px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #FFD6EA;
+    transition:.25s;
+}
+
+.top-amigos a:hover img{
+    border-color:#FF69B4;
+    transform:scale(1.1);
 }
 
 .gif-gatinho{
-
-    margin-top:20px;
-
-    width:100%;
-
-    height:140px;
-
-    border:2px dashed pink;
-
-    border-radius:12px;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    color:#FF69B4;
-
+    margin-top:20px;
+    height:120px;
+    overflow:hidden;
 }
 
-/* COLOQUE O GIF DENTRO DESSA DIV */
+.gif-gatinho img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+}
+
+/* ===== Voltar / música / footer ===== */
 
 .voltar{
-
     grid-area: voltar;
-
     display:block;
-
     width:200px;
-
-    margin:20px auto;
-
+    margin:20px auto 0;
     text-align:center;
-
     text-decoration:none;
-
     background:#FF69B4;
-
     color:white;
-
     padding:15px;
-
     border-radius:15px;
-
     transition:.3s;
-
 }
 
 .voltar:hover{
-
     background:#FF85C1;
-
 }
 
 .music-button{
-
     grid-area: musica;
-
     display:block;
-
     width:200px;
-
-    margin:12px auto 0;
-
+    margin:0 auto;
     text-align:center;
-
     background:white;
-
     color:#FF69B4;
-
     border:2px solid #FF69B4;
-
     padding:13px;
-
     border-radius:15px;
-
     font-family:'Quicksand',sans-serif;
-
     font-size:15px;
-
     font-weight:600;
-
     cursor:pointer;
-
     transition:.3s;
-
 }
 
 .music-button:hover,
 .music-button.tocando{
-
     background:#FF69B4;
-
     color:white;
-
 }
 
 footer{
-
     grid-area: footer;
-
     text-align:center;
-
-    color:#777;
-
+    color:#999;
     margin-bottom:50px;
-
+    font-size:13px;
 }
 
 footer p{
-
-    margin:5px;
-
-}
-
-.gif-gatinho{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    margin-top:20px;
-
-    height:120px;
-
-    overflow:hidden;
-
-}
-
-.gif-gatinho img{
-
-    max-width:100%;
-
-    max-height:100%;
-
-    object-fit:contain;
-
+    margin:3px;
 }
 
 /* ===== Responsivo ===== */
@@ -403,6 +569,7 @@ footer p{
             "sobre"
             "sidebar"
             "galeria"
+            "diario"
             "voltar"
             "musica"
             "footer";
@@ -438,13 +605,31 @@ footer p{
         padding:20px;
     }
 
-    .sobre img{
+    .foto-frame img{
         width:100%;
         max-width:250px;
     }
 
-    .galeria{
+    .diario{
         padding:20px;
+    }
+
+    .galeria{
+        padding:25px 20px;
+    }
+
+    .scrapbook{
+        grid-template-columns:repeat(2, 1fr);
+        grid-auto-rows:150px;
+    }
+
+    .polaroid.destaque{
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .doodle{
+        display:none;
     }
 }
 
@@ -454,7 +639,14 @@ footer p{
         font-size:26px;
     }
 
-    .fotos{
+    .scrapbook{
         grid-template-columns:repeat(2, 1fr);
+        gap:22px 14px;
+        grid-auto-rows:120px;
+    }
+
+    .post-head{
+        flex-direction:column;
+        gap:4px;
     }
 }

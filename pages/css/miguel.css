@@ -23,11 +23,11 @@ main{
     padding:0 20px;
 
     display:grid;
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: 260px 1fr;
     grid-template-areas:
         "banner  banner"
         "sobre   sobre"
-        "galeria sidebar"
+        "sidebar galeria"
         "voltar  voltar"
         "musica  musica"
         "footer  footer";

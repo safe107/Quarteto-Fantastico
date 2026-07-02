@@ -155,6 +155,49 @@ main{
     margin-bottom:25px;
 }
 
+.tiragem{
+    display:grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap:20px;
+    align-items:end;
+    margin-bottom:35px;
+}
+
+.carta-grande{
+    text-align:center;
+}
+
+.carta-label{
+    display:block;
+    font-family:'Cinzel Decorative', serif;
+    font-size:12px;
+    color:#c3aee0;
+    margin-bottom:10px;
+    letter-spacing:1px;
+}
+
+.carta-grande .carta{
+    aspect-ratio: 3 / 4.5;
+}
+
+.carta-grande.destaque .carta{
+    border-color:#3ecf71;
+    box-shadow: 0 0 20px rgba(62,207,113,.4);
+    transform: scale(1.08);
+}
+
+.carta-grande.destaque .carta-label{
+    color:#3ecf71;
+}
+
+.galeria-sub{
+    text-align:center;
+    font-size:13px;
+    color:#c3aee0;
+    font-style:italic;
+    margin-bottom:20px;
+}
+
 .fotos{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
@@ -176,9 +219,17 @@ main{
     transition:.3s;
 }
 
+.carta:nth-child(1){ transform: rotate(-6deg); }
+.carta:nth-child(2){ transform: rotate(-3deg) translateY(-6px); }
+.carta:nth-child(3){ transform: rotate(1deg) translateY(-10px); }
+.carta:nth-child(4){ transform: rotate(3deg) translateY(-6px); }
+.carta:nth-child(5){ transform: rotate(6deg); }
+.carta:nth-child(6){ transform: rotate(-2deg) translateY(4px); }
+
 .carta:hover{
     box-shadow: 0 0 20px rgba(62,207,113,.6);
-    transform: rotate(-3deg) scale(1.04);
+    transform: rotate(0deg) translateY(-14px) scale(1.06) !important;
+    z-index:3;
 }
 
 /* Para trocar por uma foto real, troque a div .carta por:
@@ -304,6 +355,10 @@ footer{
 
     .fotos{
         grid-template-columns:repeat(2, 1fr);
+    }
+
+    .carta{
+        transform:none !important;
     }
 
     .moldura{

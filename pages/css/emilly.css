@@ -7,13 +7,13 @@
 }
 
 body{
-    background:#1a0805;
+    background:#0d0221;
     background-image:
-        linear-gradient(rgba(0,0,0,0) 0, rgba(0,0,0,0) 2px, rgba(255,122,48,.05) 3px),
-        radial-gradient(circle at 50% 0%, #2b1006 0%, #1a0805 70%);
+        linear-gradient(rgba(0,0,0,0) 0, rgba(0,0,0,0) 2px, rgba(0,255,150,.04) 3px),
+        radial-gradient(circle at 50% 0%, #1a0b3d 0%, #0d0221 70%);
     background-size: 100% 4px, 100% 100%;
     font-family:'VT323', monospace;
-    color:#ffe4d1;
+    color:#e6e6ff;
     font-size:20px;
 }
 
@@ -27,9 +27,9 @@ main{
 /* ===== Banner ===== */
 
 .banner{
-    background:#241008;
-    border:4px solid #ff7a30;
-    box-shadow: 0 0 0 4px #1a0805, 0 0 20px rgba(255,122,48,.5);
+    background:#150a30;
+    border:4px solid #39ff88;
+    box-shadow: 0 0 0 4px #0d0221, 0 0 20px rgba(57,255,136,.5);
     padding:30px;
     text-align:center;
     margin-bottom:30px;
@@ -39,7 +39,7 @@ main{
 .banner .tag{
     font-family:'Press Start 2P', monospace;
     font-size:10px;
-    color:#ff7a30;
+    color:#39ff88;
     margin-bottom:12px;
 }
 
@@ -47,21 +47,21 @@ main{
     font-family:'Press Start 2P', monospace;
     font-size:28px;
     color:#fff;
-    text-shadow: 3px 3px 0 #c2410c;
+    text-shadow: 3px 3px 0 #a855f7;
     letter-spacing:2px;
 }
 
 .banner h1 span{
     display:block;
     font-size:14px;
-    color:#ff7a30;
+    color:#39ff88;
     margin-top:10px;
 }
 
 .banner .classe{
     margin-top:15px;
     font-size:18px;
-    color:#ffd9b3;
+    color:#c9c9ff;
 }
 
 /* ===== Sobre / Ficha ===== */
@@ -74,9 +74,9 @@ main{
 }
 
 .ficha{
-    background:#241008;
-    border:4px solid #c2410c;
-    box-shadow: 0 0 0 4px #1a0805, 0 0 20px rgba(194,65,12,.4);
+    background:#150a30;
+    border:4px solid #a855f7;
+    box-shadow: 0 0 0 4px #0d0221, 0 0 20px rgba(168,85,247,.4);
     padding:25px;
     display:flex;
     flex-direction:column;
@@ -104,7 +104,7 @@ main{
     position:absolute;
     width:16px;
     height:16px;
-    border:4px solid #ff7a30;
+    border:4px solid #39ff88;
 }
 
 .frame-corner.tl{ top:-8px; left:-8px; border-right:none; border-bottom:none; }
@@ -129,14 +129,14 @@ main{
     font-family:'Press Start 2P', monospace;
     font-size:9px;
     width:60px;
-    color:#ff7a30;
+    color:#da7604;
 }
 
 .bar{
     flex:1;
     height:14px;
     background:#000;
-    border:2px solid #ff7a30;
+    border:2px solid #39ff88;
     padding:2px;
 }
 
@@ -147,12 +147,12 @@ main{
 .fill.hp{ width:85%; background:#ff4d6d; }
 .fill.mp{ width:60%; background:#4dc9ff; }
 .fill.drama{ width:100%; background:#ffd23f; }
-.fill.sorte{ width:40%; background:#c2410c; }
+.fill.sorte{ width:40%; background:#a855f7; }
 
 .bio{
-    background:#241008;
-    border:4px solid #ff7a30;
-    box-shadow: 0 0 0 4px #1a0805, 0 0 20px rgba(255,122,48,.35);
+    background:#150a30;
+    border:4px solid #39ff88;
+    box-shadow: 0 0 0 4px #0d0221, 0 0 20px rgba(57,255,136,.35);
     padding:25px;
     flex:2;
     min-width:260px;
@@ -161,7 +161,7 @@ main{
 .bio h2{
     font-family:'Press Start 2P', monospace;
     font-size:13px;
-    color:#ff7a30;
+    color:#39ff88;
     margin-bottom:18px;
 }
 
@@ -172,22 +172,22 @@ main{
 
 .card-info{
     margin-top:20px;
-    background:#1a0805;
-    border:2px dashed #c2410c;
+    background:#0d0221;
+    border:2px dashed #a855f7;
     padding:15px;
     font-size:18px;
 }
 
 .online{
-    color:#ff7a30;
+    color:#39ff88;
 }
 
 /* ===== Galeria ===== */
 
 .galeria{
-    background:#241008;
-    border:4px solid #c2410c;
-    box-shadow: 0 0 0 4px #1a0805, 0 0 20px rgba(194,65,12,.4);
+    background:#150a30;
+    border:4px solid #a855f7;
+    box-shadow: 0 0 0 4px #0d0221, 0 0 20px rgba(168,85,247,.4);
     padding:25px;
     margin-bottom:30px;
 }
@@ -195,7 +195,7 @@ main{
 .galeria h2{
     font-family:'Press Start 2P', monospace;
     font-size:13px;
-    color:#c2410c;
+    color:#a855f7;
     margin-bottom:20px;
     text-align:center;
 }
@@ -208,12 +208,12 @@ main{
 
 .slot{
     aspect-ratio: 1 / 1;
-    border:3px dashed #ff7a30;
-    background: repeating-linear-gradient(45deg, #241008, #241008 10px, #3a1608 10px, #3a1608 20px);
+    border:3px dashed #39ff88;
+    background: repeating-linear-gradient(45deg, #150a30, #150a30 10px, #1a1040 10px, #1a1040 20px);
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#ff7a30;
+    color:#39ff88;
     font-family:'Press Start 2P', monospace;
     font-size:9px;
     text-align:center;
@@ -222,8 +222,8 @@ main{
 }
 
 .slot:hover{
-    background:#3a1608;
-    box-shadow: 0 0 15px rgba(255,122,48,.6) inset;
+    background:#1a1040;
+    box-shadow: 0 0 15px rgba(57,255,136,.6) inset;
 }
 
 /* Para trocar por uma foto real, troque a div .slot por:
@@ -239,42 +239,21 @@ main{
     text-decoration:none;
     font-family:'Press Start 2P', monospace;
     font-size:11px;
-    background:#ff7a30;
-    color:#1a0805;
+    background:#39ff88;
+    color:#0d0221;
     padding:16px;
     border:3px solid #fff;
     transition:.2s;
 }
 
 .voltar:hover{
-    background:#c2410c;
+    background:#a855f7;
     color:#fff;
-}
-
-.music-button{
-    display:block;
-    width:260px;
-    margin:0 auto 30px;
-    text-align:center;
-    font-family:'Press Start 2P', monospace;
-    font-size:11px;
-    background:#241008;
-    color:#ff7a30;
-    padding:16px;
-    border:3px solid #ff7a30;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.music-button:hover,
-.music-button.tocando{
-    background:#ff7a30;
-    color:#1a0805;
 }
 
 footer{
     text-align:center;
-    color:#a67c5a;
+    color:#8888bb;
     margin-bottom:40px;
     font-size:16px;
 }
