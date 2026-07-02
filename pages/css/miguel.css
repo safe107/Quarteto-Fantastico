@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050107;
+    background-image:
+        linear-gradient(rgba(168,85,247,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168,85,247,.05) 1px, transparent 1px);
+    background-size: 100% 3px, 30px 30px;
+    font-family:'Share Tech Mono', monospace;
+    color:#e0d4ff;
+}
+
+main{
+    width:100%;
+    max-width:1300px;
+    margin:40px auto;
+    padding:0 20px;
+
+    display:grid;
+    grid-template-columns: 1fr 280px;
+    grid-template-areas:
+        "banner  banner"
+        "sobre   sobre"
+        "galeria sidebar"
+        "voltar  voltar"
+        "musica  musica"
+        "footer  footer";
+    gap:30px;
+}
+
+/* ===== Banner ===== */
+
+.banner{
+    grid-area: banner;
+    background:#0b0410;
+    border:1px solid #a855f7;
+    box-shadow: 0 0 25px rgba(168,85,247,.35);
+    padding:30px;
+    text-align:center;
+    position:relative;
+}
+
+.terminal-line{
+    color:#39ff88;
+    font-size:14px;
+    margin:4px 0;
+}
+
+.banner h1{
+    font-family:'VT323', monospace;
+    font-size:56px;
+    color:#c084fc;
+    letter-spacing:6px;
+    text-shadow: 0 0 15px #a855f7, 0 0 30px #7e22ce;
+}
+
+.cursor{
+    animation: blink 1s steps(1) infinite;
+    color:#39ff88;
+}
+
+@keyframes blink{
+    50%{ opacity:0; }
+}
+
+/* ===== Sobre ===== */
+
+.sobre{
+    grid-area: sobre;
+    background:#0b0410;
+    border:1px solid #a855f7;
+    box-shadow: 0 0 20px rgba(168,85,247,.25);
+    padding:30px;
+    display:flex;
+    gap:35px;
+    align-items:center;
+}
+
+.hud-foto{
+    position:relative;
+    width:220px;
+    height:220px;
+    flex-shrink:0;
+    overflow:hidden;
+}
+
+.hud-foto img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter: contrast(1.1) saturate(1.15);
+}
+
+.corner{
+    position:absolute;
+    width:22px;
+    height:22px;
+    border:3px solid #39ff88;
+    z-index:2;
+}
+
+.corner.tl{ top:0; left:0; border-right:none; border-bottom:none; }
+.corner.tr{ top:0; right:0; border-left:none; border-bottom:none; }
+.corner.bl{ bottom:0; left:0; border-right:none; border-top:none; }
+.corner.br{ bottom:0; right:0; border-left:none; border-top:none; }
+
+.scan{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:4px;
+    background:rgba(57,255,136,.6);
+    box-shadow: 0 0 10px 2px rgba(57,255,136,.6);
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan{
+    0%{ top:0; }
+    100%{ top:100%; }
+}
+
+.texto{
+    flex:1;
+}
+
+.texto h2{
+    color:#39ff88;
+    font-size:18px;
+    margin-bottom:16px;
+}
+
+.texto p{
+    line-height:1.7;
+    color:#cbb8ec;
+}
+
+.hud-stats{
+    margin-top:22px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.stat-label{
+    font-size:12px;
+    color:#a855f7;
+    letter-spacing:1px;
+}
+
+.stat-bar{
+    margin-top:4px;
+    height:8px;
+    background:#1a0d26;
+    border:1px solid #a855f7;
+}
+
+.stat-fill{
+    height:100%;
+    background: linear-gradient(90deg, #39ff88, #a855f7);
+}
+
+/* ===== Galeria ===== */
+
+.galeria{
+    grid-area: galeria;
+    background:#0b0410;
+    border:1px solid #a855f7;
+    box-shadow: 0 0 20px rgba(168,85,247,.25);
+    padding:30px;
+}
+
+.galeria h2{
+    color:#39ff88;
+    margin-bottom:22px;
+}
+
+.fotos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:18px;
+}
+
+.arquivo{
+    aspect-ratio: 1 / 1;
+    border:1px dashed #a855f7;
+    background:#0f0616;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#7c5ba6;
+    font-size:13px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.arquivo:hover{
+    border-style:solid;
+    color:#39ff88;
+    box-shadow: 0 0 15px rgba(57,255,136,.4) inset;
+}
+
+/* Para trocar por uma foto real, troque a div .arquivo por:
+   <img src="../img/perfis/SEU_ARQUIVO.jpg" alt="descrição"> e adicione a classe "fotos img" no CSS */
+
+/* ===== Sidebar (sticky) ===== */
+
+.sidebar{
+    grid-area: sidebar;
+    align-self:start;
+    position:sticky;
+    top:20px;
+
+    background:#0b0410;
+    border:1px solid #39ff88;
+    padding:20px;
+}
+
+.sidebar h3{
+    color:#39ff88;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.sidebar hr{
+    margin:15px 0;
+    border:none;
+    border-top:1px dashed #a855f7;
+}
+
+.sidebar .ok{
+    color:#39ff88;
+}
+
+/* ===== Voltar / Footer ===== */
+
+.voltar{
+    grid-area: voltar;
+    display:block;
+    width:280px;
+    margin:10px auto;
+    text-align:center;
+    text-decoration:none;
+    color:#39ff88;
+    background:#0b0410;
+    border:1px solid #39ff88;
+    padding:15px;
+    transition:.2s;
+}
+
+.voltar:hover{
+    background:#39ff88;
+    color:#050107;
+    box-shadow: 0 0 20px rgba(57,255,136,.6);
+}
+
+.music-button{
+    grid-area: musica;
+    display:block;
+    width:280px;
+    margin:0 auto;
+    text-align:center;
+    color:#a855f7;
+    background:#0b0410;
+    border:1px solid #a855f7;
+    padding:15px;
+    cursor:pointer;
+    font-family:'Share Tech Mono', monospace;
+    transition:.2s;
+}
+
+.music-button:hover,
+.music-button.tocando{
+    background:#a855f7;
+    color:#fff;
+    box-shadow: 0 0 20px rgba(168,85,247,.6);
+}
+
+footer{
+    grid-area: footer;
+    text-align:center;
+    color:#6c5a8c;
+    margin-bottom:40px;
+    font-size:14px;
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 900px) {
+
+    main{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "banner"
+            "sobre"
+            "sidebar"
+            "galeria"
+            "voltar"
+            "musica"
+            "footer";
+    }
+
+    .sidebar{
+        position:static;
+        max-width:280px;
+        margin:0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .banner h1{ font-size:36px; }
+
+    .sobre{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .fotos{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    .hud-foto{
+        width:180px;
+        height:180px;
+    }
+}

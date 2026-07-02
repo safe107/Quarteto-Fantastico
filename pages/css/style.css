@@ -100,17 +100,30 @@ main p {
 
 }
 
-.card img {
+.card-img-wrap {
 
     width: 180px;
-
     height: 180px;
 
     border-radius: 12px;
 
-    object-fit: cover;
+    overflow: hidden;
 
     border: 3px solid transparent;
+
+    transition: .3s ease;
+
+}
+
+.card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
 
 }
 
@@ -126,6 +139,18 @@ main p {
 
 }
 
+.card .vibe {
+
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    opacity: .7;
+
+    letter-spacing: .5px;
+
+}
+
 .card:hover{
 
     transform:
@@ -134,15 +159,26 @@ main p {
 
 }
 
-.card:hover img{
+/* Cada perfil acende com a cor da sua identidade */
 
+.card-kemilly:hover .card-img-wrap{
+    border-color:#FF69B4;
+    box-shadow: 0 0 15px #FF69B4, 0 0 40px #ff85c1, 0 0 70px #ff2e8a;
+}
+
+.card-emilly:hover .card-img-wrap{
+    border-color:#ff7a30;
+    box-shadow: 0 0 15px #ff7a30, 0 0 40px #c2410c, 0 0 70px #7c2d12;
+}
+
+.card-joao:hover .card-img-wrap{
+    border-color:#3ecf71;
+    box-shadow: 0 0 15px #3ecf71, 0 0 40px #23a355, 0 0 70px #146b38;
+}
+
+.card-miguel:hover .card-img-wrap{
     border-color:#a855f7;
-
-    box-shadow:
-        0 0 15px #a855f7,
-        0 0 40px #7e22ce,
-        0 0 70px #581c87;
-
+    box-shadow: 0 0 15px #a855f7, 0 0 40px #7e22ce, 0 0 70px #581c87;
 }
 
 #music-button {
@@ -173,6 +209,14 @@ main p {
 
 }
 
+#music-button.tocando {
+
+    background: #a855f7;
+
+    box-shadow: 0 0 20px #a855f7;
+
+}
+
 /* ===== Responsivo ===== */
 
 @media (max-width: 768px) {
@@ -181,7 +225,7 @@ main p {
         gap: 25px;
     }
 
-    .card img {
+    .card-img-wrap {
         width: 130px;
         height: 130px;
     }
@@ -202,7 +246,7 @@ main p {
         gap: 15px;
     }
 
-    .card img {
+    .card-img-wrap {
         width: 100px;
         height: 100px;
     }

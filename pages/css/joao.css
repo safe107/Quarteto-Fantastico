@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital@0;1&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#120818;
+    background-image:
+        radial-gradient(circle at 50% 0%, #2a1140 0%, #120818 60%),
+        radial-gradient(#3a1f5c 1px, transparent 1px);
+    background-size: 100% 100%, 30px 30px;
+    font-family:'EB Garamond', serif;
+    color:#e8d9ff;
+}
+
+main{
+    width:100%;
+    max-width:1300px;
+    margin:40px auto;
+    padding:0 20px;
+
+    display:grid;
+    grid-template-columns: 1fr 280px;
+    grid-template-areas:
+        "banner  banner"
+        "sobre   sobre"
+        "galeria sidebar"
+        "voltar  voltar"
+        "musica  musica"
+        "footer  footer";
+    gap:30px;
+}
+
+/* ===== Banner ===== */
+
+.banner{
+    grid-area: banner;
+    background:linear-gradient(180deg, #1c0e2e, #120818);
+    border:2px solid #3ecf71;
+    box-shadow: 0 0 25px rgba(62,207,113,.35), inset 0 0 30px rgba(168,85,247,.15);
+    border-radius:10px;
+    padding:40px;
+    text-align:center;
+}
+
+.banner .simbolos{
+    color:#3ecf71;
+    font-size:22px;
+    letter-spacing:10px;
+    margin-bottom:10px;
+}
+
+.banner h1{
+    font-family:'Cinzel Decorative', serif;
+    color:#3ecf71;
+    font-size:38px;
+    text-shadow: 0 0 15px rgba(62,207,113,.6);
+}
+
+.banner .subtitulo{
+    margin-top:12px;
+    font-style:italic;
+    color:#c3aee0;
+}
+
+/* ===== Sobre ===== */
+
+.sobre{
+    grid-area: sobre;
+    background:#1c0e2e;
+    border:2px solid #a855f7;
+    box-shadow: 0 0 20px rgba(168,85,247,.25);
+    border-radius:10px;
+    padding:30px;
+    display:flex;
+    gap:40px;
+    align-items:center;
+}
+
+.retrato{
+    text-align:center;
+    flex-shrink:0;
+}
+
+.moldura{
+    width:220px;
+    height:280px;
+    border-radius:50% 50% 8px 8px;
+    padding:8px;
+    background: linear-gradient(160deg, #3ecf71, #7e22ce 60%, #3ecf71);
+    box-shadow: 0 0 25px rgba(62,207,113,.5);
+}
+
+.moldura img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50% 50% 4px 4px;
+}
+
+.legenda{
+    margin-top:12px;
+    color:#3ecf71;
+    font-family:'Cinzel Decorative', serif;
+    font-size:14px;
+}
+
+.texto{
+    flex:1;
+}
+
+.texto h2{
+    font-family:'Cinzel Decorative', serif;
+    color:#3ecf71;
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.texto p{
+    line-height:1.8;
+    font-size:19px;
+}
+
+.card-info{
+    margin-top:22px;
+    background:#120818;
+    border:1px dashed #3ecf71;
+    border-radius:10px;
+    padding:20px;
+}
+
+.card-info em{
+    color:#c3aee0;
+    font-style:italic;
+}
+
+/* ===== Galeria (Arcanos) ===== */
+
+.galeria{
+    grid-area: galeria;
+    background:#1c0e2e;
+    border:2px solid #a855f7;
+    box-shadow: 0 0 20px rgba(168,85,247,.25);
+    border-radius:10px;
+    padding:30px;
+}
+
+.galeria h2{
+    text-align:center;
+    font-family:'Cinzel Decorative', serif;
+    color:#3ecf71;
+    margin-bottom:25px;
+}
+
+.fotos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:22px;
+}
+
+.carta{
+    aspect-ratio: 3 / 4.5;
+    border:2px solid #3ecf71;
+    border-radius:12px;
+    background:
+        radial-gradient(circle, #2a1140 0%, #120818 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#3ecf71;
+    font-size:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.carta:hover{
+    box-shadow: 0 0 20px rgba(62,207,113,.6);
+    transform: rotate(-3deg) scale(1.04);
+}
+
+/* Para trocar por uma foto real, troque a div .carta por:
+   <img src="../img/perfis/SEU_ARQUIVO.jpg" alt="descrição"> e adicione a classe "fotos img" no CSS */
+
+/* ===== Sidebar (sticky) ===== */
+
+.sidebar{
+    grid-area: sidebar;
+    align-self:start;
+    position:sticky;
+    top:20px;
+
+    background:#1c0e2e;
+    border:2px dashed #3ecf71;
+    border-radius:10px;
+    padding:20px;
+}
+
+.sidebar h3{
+    text-align:center;
+    font-family:'Cinzel Decorative', serif;
+    color:#3ecf71;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.sidebar hr{
+    margin:15px 0;
+    border:none;
+    border-top:1px dashed #a855f7;
+}
+
+/* ===== Voltar / Footer ===== */
+
+.voltar{
+    grid-area: voltar;
+    display:block;
+    width:240px;
+    margin:10px auto;
+    text-align:center;
+    text-decoration:none;
+    color:#120818;
+    background:#3ecf71;
+    padding:15px;
+    border-radius:30px;
+    font-family:'Cinzel Decorative', serif;
+    font-size:13px;
+    transition:.3s;
+}
+
+.voltar:hover{
+    background:#7ce8a8;
+    box-shadow: 0 0 20px rgba(62,207,113,.6);
+}
+
+.music-button{
+    grid-area: musica;
+    display:block;
+    width:240px;
+    margin:0 auto;
+    text-align:center;
+    background:transparent;
+    color:#3ecf71;
+    border:2px solid #3ecf71;
+    padding:14px;
+    border-radius:30px;
+    font-family:'Cinzel Decorative', serif;
+    font-size:13px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.music-button:hover,
+.music-button.tocando{
+    background:#3ecf71;
+    color:#120818;
+    box-shadow: 0 0 20px rgba(62,207,113,.6);
+}
+
+footer{
+    grid-area: footer;
+    text-align:center;
+    color:#8a76a8;
+    margin-bottom:40px;
+    font-style:italic;
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 900px) {
+
+    main{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "banner"
+            "sobre"
+            "sidebar"
+            "galeria"
+            "voltar"
+            "musica"
+            "footer";
+    }
+
+    .sidebar{
+        position:static;
+        max-width:280px;
+        margin:0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .banner h1{ font-size:28px; }
+
+    .sobre{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .fotos{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    .moldura{
+        width:180px;
+        height:230px;
+    }
+}

@@ -1,0 +1,13 @@
+Coloque aqui o arquivo de música de fundo.
+
+Nome esperado pelo código: musica.mp3
+(pode adicionar também musica.ogg como alternativa, já tem espaço reservado no HTML)
+
+Depois de colocar o arquivo aqui, o botão "Tocar música" que existe em:
+- index.html (tela inicial)
+- pages/kemilly.html
+- pages/emilly.html
+- pages/joao.html
+- pages/miguel.html
+
+vai tocar automaticamente esse arquivo.

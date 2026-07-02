@@ -13,44 +13,66 @@
         <source src="videos/background.mp4" type="video/mp4">
     </video>
 
-        <div class="overlay"></div>
-        <main>
-            <h1>Quarteto Fantastico</h1>
+    <div class="overlay"></div>
+    <main>
+        <h1>Quarteto Fantástico</h1>
 
-            <p>Quem É?</p>
+        <p>Quem É?</p>
 
-            <div class="cards">
+        <div class="cards">
 
-               <a href="pages/kemi.html" class="card">
-                    <img src="img/perfis/kemilly.jpg" alt="foto kemilly">
-                    <p>Kemilly</p>
-                    
-                </a>
+            <a href="pages/kemilly.html" class="card card-kemilly">
+                <div class="card-img-wrap">
+                    <img src="img/perfis/kemilly.jpg" alt="foto Kemilly">
+                </div>
+                <p>Kemilly</p>
+                <span class="vibe">Cabeçuda</span>
+            </a>
 
-                <a href="miguel.html" class="card">
-                    <img src="img/perfis/IMG_20260619_231737_742.webp" alt="fot Miguel">
-                    <p>Miguel</p>
-               </a>
-                    
-                <a href="emilly.html" class="card" >
-                    <img src="img/perfis/emilly.jpg" alt="foto emilly">
+            <a href="pages/miguel.html" class="card card-miguel">
+                <div class="card-img-wrap">
+                    <img src="img/perfis/IMG_20260619_231737_742.webp" alt="foto Miguel">
+                </div>
+                <p>Miguel</p>
+                <span class="vibe">Um Miguel ai</span>
+            </a>
+
+            <a href="pages/emilly.html" class="card card-emilly">
+                <div class="card-img-wrap">
+                    <img src="img/perfis/emilly.jpg" alt="foto Emilly">
+                </div>
                 <p>Emilly</p>
-                </a>
+                <span class="vibe">Mitomaníaca</span>
+            </a>
 
-                <a href="jao.html" class="card">
-                    <img src="img/perfis/jao.jpg" alt="foto joao">
-                    <p>jao</p>
-                </a>
+            <a href="pages/joao.html" class="card card-joao">
+                <div class="card-img-wrap">
+                    <img src="img/perfis/jao.jpg" alt="foto João">
+                </div>
+                <p>João</p>
+                <span class="vibe">Bruxo ✦</span>
+            </a>
 
-            </div>
+            
 
-            <button id="music-button">
-                Tocar música
-            </button>
+        </div>
 
-        </main>
+        <button id="music-button">
+            ▶ Tocar música
+        </button>
 
-        
+        <!--
+            Coloque o arquivo de música aqui: quarteto fantastico/audio/musica.mp3
+            (pode adicionar também uma versão .ogg como alternativa abaixo)
+        -->
+        <audio id="bg-music" loop>
+            <source src="audio/Lady Gaga - Poker Face (Official Music Video) - LadyGagaVEVO (youtube).mp3" type="audio/mpeg">
+            <!-- <source src="audio/musica.ogg" type="audio/ogg"> -->
+        </audio>
+
+    </main>
+
+    <script src="js/script.js"></script>
 
 </body>
 

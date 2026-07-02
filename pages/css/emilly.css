@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#1a0805;
+    background-image:
+        linear-gradient(rgba(0,0,0,0) 0, rgba(0,0,0,0) 2px, rgba(255,122,48,.05) 3px),
+        radial-gradient(circle at 50% 0%, #2b1006 0%, #1a0805 70%);
+    background-size: 100% 4px, 100% 100%;
+    font-family:'VT323', monospace;
+    color:#ffe4d1;
+    font-size:20px;
+}
+
+main{
+    width:100%;
+    max-width:1100px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+/* ===== Banner ===== */
+
+.banner{
+    background:#241008;
+    border:4px solid #ff7a30;
+    box-shadow: 0 0 0 4px #1a0805, 0 0 20px rgba(255,122,48,.5);
+    padding:30px;
+    text-align:center;
+    margin-bottom:30px;
+    image-rendering: pixelated;
+}
+
+.banner .tag{
+    font-family:'Press Start 2P', monospace;
+    font-size:10px;
+    color:#ff7a30;
+    margin-bottom:12px;
+}
+
+.banner h1{
+    font-family:'Press Start 2P', monospace;
+    font-size:28px;
+    color:#fff;
+    text-shadow: 3px 3px 0 #c2410c;
+    letter-spacing:2px;
+}
+
+.banner h1 span{
+    display:block;
+    font-size:14px;
+    color:#ff7a30;
+    margin-top:10px;
+}
+
+.banner .classe{
+    margin-top:15px;
+    font-size:18px;
+    color:#ffd9b3;
+}
+
+/* ===== Sobre / Ficha ===== */
+
+.sobre{
+    display:flex;
+    gap:30px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.ficha{
+    background:#241008;
+    border:4px solid #c2410c;
+    box-shadow: 0 0 0 4px #1a0805, 0 0 20px rgba(194,65,12,.4);
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    flex:1;
+    min-width:260px;
+}
+
+.foto-principal{
+    position:relative;
+    width:200px;
+    height:200px;
+}
+
+.foto-principal img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    image-rendering: pixelated;
+    border:3px solid #fff;
+}
+
+.frame-corner{
+    position:absolute;
+    width:16px;
+    height:16px;
+    border:4px solid #ff7a30;
+}
+
+.frame-corner.tl{ top:-8px; left:-8px; border-right:none; border-bottom:none; }
+.frame-corner.tr{ top:-8px; right:-8px; border-left:none; border-bottom:none; }
+.frame-corner.bl{ bottom:-8px; left:-8px; border-right:none; border-top:none; }
+.frame-corner.br{ bottom:-8px; right:-8px; border-left:none; border-top:none; }
+
+.stats{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.stat-bar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.stat-bar .label{
+    font-family:'Press Start 2P', monospace;
+    font-size:9px;
+    width:60px;
+    color:#ff7a30;
+}
+
+.bar{
+    flex:1;
+    height:14px;
+    background:#000;
+    border:2px solid #ff7a30;
+    padding:2px;
+}
+
+.fill{
+    height:100%;
+}
+
+.fill.hp{ width:85%; background:#ff4d6d; }
+.fill.mp{ width:60%; background:#4dc9ff; }
+.fill.drama{ width:100%; background:#ffd23f; }
+.fill.sorte{ width:40%; background:#c2410c; }
+
+.bio{
+    background:#241008;
+    border:4px solid #ff7a30;
+    box-shadow: 0 0 0 4px #1a0805, 0 0 20px rgba(255,122,48,.35);
+    padding:25px;
+    flex:2;
+    min-width:260px;
+}
+
+.bio h2{
+    font-family:'Press Start 2P', monospace;
+    font-size:13px;
+    color:#ff7a30;
+    margin-bottom:18px;
+}
+
+.bio p{
+    line-height:1.6;
+    font-size:19px;
+}
+
+.card-info{
+    margin-top:20px;
+    background:#1a0805;
+    border:2px dashed #c2410c;
+    padding:15px;
+    font-size:18px;
+}
+
+.online{
+    color:#ff7a30;
+}
+
+/* ===== Galeria ===== */
+
+.galeria{
+    background:#241008;
+    border:4px solid #c2410c;
+    box-shadow: 0 0 0 4px #1a0805, 0 0 20px rgba(194,65,12,.4);
+    padding:25px;
+    margin-bottom:30px;
+}
+
+.galeria h2{
+    font-family:'Press Start 2P', monospace;
+    font-size:13px;
+    color:#c2410c;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.fotos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:20px;
+}
+
+.slot{
+    aspect-ratio: 1 / 1;
+    border:3px dashed #ff7a30;
+    background: repeating-linear-gradient(45deg, #241008, #241008 10px, #3a1608 10px, #3a1608 20px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#ff7a30;
+    font-family:'Press Start 2P', monospace;
+    font-size:9px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.slot:hover{
+    background:#3a1608;
+    box-shadow: 0 0 15px rgba(255,122,48,.6) inset;
+}
+
+/* Para trocar por uma foto real, troque a div .slot por:
+   <img src="../img/perfis/SEU_ARQUIVO.jpg" alt="descrição"> */
+
+/* ===== Voltar / Footer ===== */
+
+.voltar{
+    display:block;
+    width:260px;
+    margin:10px auto 30px;
+    text-align:center;
+    text-decoration:none;
+    font-family:'Press Start 2P', monospace;
+    font-size:11px;
+    background:#ff7a30;
+    color:#1a0805;
+    padding:16px;
+    border:3px solid #fff;
+    transition:.2s;
+}
+
+.voltar:hover{
+    background:#c2410c;
+    color:#fff;
+}
+
+.music-button{
+    display:block;
+    width:260px;
+    margin:0 auto 30px;
+    text-align:center;
+    font-family:'Press Start 2P', monospace;
+    font-size:11px;
+    background:#241008;
+    color:#ff7a30;
+    padding:16px;
+    border:3px solid #ff7a30;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.music-button:hover,
+.music-button.tocando{
+    background:#ff7a30;
+    color:#1a0805;
+}
+
+footer{
+    text-align:center;
+    color:#a67c5a;
+    margin-bottom:40px;
+    font-size:16px;
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 768px){
+
+    .banner h1{ font-size:20px; }
+
+    .sobre{ flex-direction:column; }
+
+    .ficha{ min-width:100%; }
+
+    .bio{ min-width:100%; }
+}
+
+@media (max-width: 480px){
+
+    .fotos{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    .banner h1{ font-size:16px; }
+}
