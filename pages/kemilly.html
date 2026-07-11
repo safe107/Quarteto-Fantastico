@@ -219,7 +219,7 @@
             </div>
 
             <!-- COLOQUE O GIF DO GATINHO AQUI -->
-            <div class="gif-gatinho">
+            <div class="gif-gatinho" id="gif-secreto" title="???">
                 <img src="../img/galeria/gatinho.gif" alt="">
             </div>
 
@@ -229,9 +229,9 @@
 
         <button id="music-button" class="music-button">▶ Tocar música</button>
 
-        <!-- Coloque o arquivo de música aqui: quarteto fantastico/audio/musica.mp3 -->
+        <!-- Música da Kemilly: /audio/kemilly.mp3 -->
         <audio id="bg-music" loop>
-            <source src="../audio/musica.mp3" type="audio/mpeg">
+            <source src="../audio/RÜFÜS DU SOL ●● Innerbloom (Official Video) - RÜFÜS DU SOL (youtube).mp3" type="audio/mpeg">
             <!-- <source src="../audio/musica.ogg" type="audio/ogg"> -->
         </audio>
 
@@ -242,7 +242,52 @@
 
     </main>
 
+    <!-- ===== Modal de senha (aparece depois de 3 cliques no gif) ===== -->
+    <div class="senha-overlay" id="senha-overlay">
+        <div class="senha-caixa">
+            <button class="senha-fechar" id="senha-fechar" aria-label="fechar">✕</button>
+            <p class="senha-titulo">✧ acesso restrito ✧</p>
+            <p class="senha-dica">Oq a kemilly é ? </p>
+            <input type="password" id="senha-input" class="senha-input" placeholder="senha...">
+            <button class="senha-botao" id="senha-botao">entrar ♡</button>
+            <p class="senha-erro" id="senha-erro">senha errada, tenta de novo ✿</p>
+        </div>
+    </div>
+
+    <!-- ===== Tela secreta: My Favorite Place ===== -->
+    <div class="secreta-overlay" id="secreta-overlay">
+
+        <button class="secreta-fechar" id="secreta-fechar">← voltar</button>
+
+        <h1 class="secreta-titulo">My Favorite Place</h1>
+
+        <div class="secreta-fotos" id="secreta-fotos">
+
+            <!--
+                Pra adicionar fotos aqui, é só trocar cada div ".secreta-slot"
+                abaixo por uma imagem, assim:
+
+                <img src="../img/galeria/SEU_ARQUIVO.jpg" alt="descrição">
+
+                Coloque os arquivos dentro de /img/galeria (a mesma pasta das
+                outras fotos da Kemilly). Pode adicionar quantos quiser, só
+                copiar o bloco ".secreta-slot".
+            -->
+
+            <img src="../img/galeria/ks1.jpg" alt="">
+            <img src="../img/galeria/ks2.jpg" alt="">
+            <img src="../img/galeria/ks3.jpg" alt="">
+            <img src="../img/galeria/ks4.jpg" alt="">
+            <div class="secreta-slot"><span>+ foto</span></div>
+            <div class="secreta-slot"><span>+ foto</span></div>
+            <div class="secreta-slot"><span>+ foto</span></div>
+
+        </div>
+
+    </div>
+
     <script src="../js/script.js"></script>
+    <script src="../js/kemilly-secreto.js"></script>
 
 </body>
 

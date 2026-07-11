@@ -206,6 +206,22 @@ main{
     box-shadow: 0 0 15px rgba(57,255,136,.4) inset;
 }
 
+.galeria-nota{
+    margin-top:22px;
+    text-align:center;
+    font-size:12px;
+    color:#6c5a8c;
+    border-top:1px dashed rgba(168,85,247,.3);
+    padding-top:14px;
+}
+
+.galeria-nota code{
+    background:#050107;
+    color:#39ff88;
+    padding:1px 6px;
+    font-size:11px;
+}
+
 /* Para trocar por uma foto real, troque a div .arquivo por:
    <img src="../img/perfis/SEU_ARQUIVO.jpg" alt="descrição"> e adicione a classe "fotos img" no CSS */
 

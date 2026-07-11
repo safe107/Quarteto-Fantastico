@@ -16,6 +16,12 @@
             <p class="tag">// CHARACTER SELECT</p>
             <h1>EMILLY <span>LV.99</span></h1>
             <p class="classe">Classe: Mitomaníaca Suprema ★</p>
+
+            <div class="ticker">
+                <div class="ticker-track">
+                    🎮 CONQUISTA DESBLOQUEADA: Mestre da Enrolação 🎮 NOVA QUEST: sobreviver à segunda-feira 🎮 combo de 7 dias contando historinha 🎮 CONQUISTA DESBLOQUEADA: Mestre da Enrolação 🎮 NOVA QUEST: sobreviver à segunda-feira 🎮 combo de 7 dias contando historinha 🎮
+                </div>
+            </div>
         </header>
 
         <section class="sobre">
@@ -28,6 +34,7 @@
                     <span class="frame-corner tr"></span>
                     <span class="frame-corner bl"></span>
                     <span class="frame-corner br"></span>
+                    <span class="lv-tag">LV.99</span>
                 </div>
 
                 <div class="stats">
@@ -76,18 +83,101 @@
 
         <section class="galeria">
 
+            <span class="doodle doodle-star">✦</span>
+            <span class="doodle doodle-heart">♥</span>
+
             <h2>&gt; Inventário / Galeria</h2>
+            <p class="galeria-sub">// itens raros coletados durante a jornada</p>
 
             <div class="fotos">
+
+                <figure class="item destaque raro">
+                    <img src="../img/galeria/e1.jpg" alt="item raro 1">
+                    <figcaption>item lendário<br><small>encontrado sem querer</small></figcaption>
+                </figure>
+
                 <div class="slot"><span>+ foto</span></div>
                 <div class="slot"><span>+ foto</span></div>
                 <div class="slot"><span>+ foto</span></div>
                 <div class="slot"><span>+ foto</span></div>
                 <div class="slot"><span>+ foto</span></div>
-                <div class="slot"><span>+ foto</span></div>
+
             </div>
 
+            <p class="galeria-nota">// pra trocar um slot vazio por foto real, troque a div <code>.slot</code> por uma <code>&lt;img&gt;</code> — coloque os arquivos em <code>/img/galeria</code></p>
+
         </section>
+
+        <section class="quests">
+
+            <h2>&gt; Log de Quests</h2>
+
+            <article class="quest">
+                <div class="quest-head">
+                    <span class="quest-tag">concluída</span>
+                    <span class="quest-titulo">aquela história impossível de acreditar</span>
+                </div>
+                <p class="quest-texto">
+                    Lembrar de uma descricao da quest, tipo uma historinha aleatória
+                    que a Emilly contou .
+                </p>
+                <div class="quest-foot">🏆 +50 XP · 💬 reações do grupo: kkkkkk</div>
+            </article>
+
+            <article class="quest">
+                <div class="quest-head">
+                    <span class="quest-tag">em andamento</span>
+                    <span class="quest-titulo">missão secreta</span>
+                </div>
+                <p class="quest-texto">
+                    outro espacinho pra outra "quest". dá pra colocar quantas
+                    quiser copiando esse bloco &lt;article class="quest"&gt;.
+                </p>
+                <div class="quest-foot">🎯 progresso: 60%</div>
+            </article>
+
+        </section>
+
+        <aside class="sidebar">
+
+            <h3>&gt; STATUS_MENU</h3>
+
+            <div class="xp-bar">
+                <div class="xp-fill"></div>
+            </div>
+            <p class="xp-label">XP até o próximo nível</p>
+
+            <hr>
+
+            <p class="side-label">🎧 tocando agora</p>
+            <p class="side-valor">Kingdom Dance</p>
+
+            <hr>
+
+            <p class="side-label">🕹️ guild</p>
+            <p class="side-valor">Quarteto Fantástico</p>
+
+            <hr>
+
+            <p class="side-label">👥 party</p>
+            <div class="party">
+                <a href="kemilly.html" title="Kemilly">
+                    <img src="../img/perfis/kemilly.jpg" alt="Kemilly">
+                </a>
+                <a href="joao.html" title="João">
+                    <img src="../img/perfis/jao.jpg" alt="João">
+                </a>
+                <a href="miguel.html" title="Miguel">
+                    <img src="../img/perfis/IMG_20260619_231737_742.webp" alt="Miguel">
+                </a>
+            </div>
+
+            <!-- COLOQUE UM GIF PIXELADO AQUI, se quiser -->
+            <div class="gif-slot">
+                <span><img src="../" alt=""></span>
+            </div>
+
+        </aside>
 
         <a href="../index.html" class="voltar">
             ◄ VOLTAR AO MENU
@@ -97,9 +187,9 @@
             ▶ TOCAR MÚSICA
         </button>
 
-        <!-- Coloque o arquivo de música aqui: quarteto fantastico/audio/musica.mp3 -->
+        <!-- Música da Emilly: /audio/emilly.mp3 -->
         <audio id="bg-music" loop>
-            <source src="../audio/musica.mp3" type="audio/mpeg">
+            <source src="../audio/Você não tem AURA áudio para whatsapp #lyrics #tiktok - Plug1 (youtube).mp3" type="audio/mpeg">
             <!-- <source src="../audio/musica.ogg" type="audio/ogg"> -->
         </audio>
 

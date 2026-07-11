@@ -198,6 +198,23 @@ main{
     margin-bottom:20px;
 }
 
+.galeria-nota{
+    margin-top:24px;
+    text-align:center;
+    font-size:12px;
+    color:#8a76a8;
+    border-top:1px dashed rgba(62,207,113,.3);
+    padding-top:14px;
+}
+
+.galeria-nota code{
+    background:#120818;
+    color:#3ecf71;
+    padding:1px 6px;
+    border-radius:6px;
+    font-size:11px;
+}
+
 .fotos{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
