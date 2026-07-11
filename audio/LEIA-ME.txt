@@ -1,13 +1,16 @@
-Coloque aqui o arquivo de música de fundo.
+Cada página toca a sua própria música:
 
-Nome esperado pelo código: musica.mp3
-(pode adicionar também musica.ogg como alternativa, já tem espaço reservado no HTML)
+  index.html          → audio/emilly.mp3   (tela inicial)
+  pages/kemilly.html  → audio/kemilly.mp3
+  pages/emilly.html   → audio/emilly.mp3
+  pages/joao.html     → audio/joao.mp3
+  pages/miguel.html   → audio/miguel.mp3
 
-Depois de colocar o arquivo aqui, o botão "Tocar música" que existe em:
-- index.html (tela inicial)
-- pages/kemilly.html
-- pages/emilly.html
-- pages/joao.html
-- pages/miguel.html
+Já coloquei 4 músicas suas nesses arquivos (renomeei só pra tirar espaço/
+parênteses do nome, que quebravam o link no navegador). Se quiser trocar
+alguma, é só substituir o arquivo correspondente mantendo o mesmo nome
+(ex: sobrescrever audio/joao.mp3 com a música nova).
 
-vai tocar automaticamente esse arquivo.
+Quer uma música diferente só na tela inicial (sem repetir a da Emilly)?
+Adicione o arquivo aqui (ex: audio/home.mp3) e troque o src dentro da tag
+<audio> no topo do index.html.
