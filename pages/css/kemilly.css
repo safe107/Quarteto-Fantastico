@@ -26,6 +26,7 @@ main{
     grid-template-areas:
         "banner  banner"
         "sobre   sobre"
+        "mural   sidebar"
         "galeria sidebar"
         "diario  sidebar"
         "voltar  voltar"
@@ -188,6 +189,10 @@ main{
     padding:30px;
 }
 
+.sobre + .diario{
+    grid-area:mural;
+}
+
 .diario h2{
     font-family:'Patrick Hand', cursive;
     color:#FF69B4;
@@ -240,6 +245,15 @@ main{
     color:#aaa;
     border-top:1px dashed #FFE0EF;
     padding-top:10px;
+}
+
+.sobre + .diario .post{
+    background:#fff7fb;
+    border-color:#ffd6ea;
+}
+
+.sobre + .diario .post-foot{
+    color:#ff9ac6;
 }
 
 /* ===== Galeria (Memories / scrapbook) ===== */
@@ -487,6 +501,29 @@ main{
     transform:scale(1.1);
 }
 
+.selinhos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:6px;
+    margin-top:16px;
+}
+
+.selinhos span{
+    background:#FFF4FA;
+    color:#c9457e;
+    border:1px dashed #FFC8DD;
+    border-radius:8px;
+    padding:5px 8px;
+    font-family:'Patrick Hand', cursive;
+    font-size:14px;
+    transform:rotate(-2deg);
+}
+
+.selinhos span:nth-child(2){
+    transform:rotate(2deg);
+}
+
 .gif-gatinho{
     display:flex;
     justify-content:center;
@@ -698,6 +735,175 @@ main{
     box-shadow:0 6px 16px rgba(0,0,0,.15);
 }
 
+/* ===== Segredo brincalhao ===== */
+
+.segredo-disfarcado{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:900;
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:50%;
+    background:#fff;
+    color:#ff9ac6;
+    font-family:'Patrick Hand', cursive;
+    font-size:20px;
+    line-height:1;
+    box-shadow:0 4px 12px rgba(255,105,180,.22);
+    cursor:pointer;
+    opacity:.46;
+    transition:.2s ease;
+}
+
+.segredo-disfarcado::before{
+    content:"";
+    position:absolute;
+    inset:-6px;
+    border:1px dashed rgba(255,154,198,.45);
+    border-radius:50%;
+    animation: segredo-pulse 2.4s ease-in-out infinite;
+}
+
+.segredo-disfarcado:hover,
+.segredo-disfarcado:focus-visible{
+    opacity:1;
+    transform:rotate(-8deg) scale(1.08);
+    outline:none;
+}
+
+@keyframes segredo-pulse{
+    50%{ transform:scale(1.16); opacity:.45; }
+}
+
+.segredo-overlay{
+    position:fixed;
+    inset:0;
+    z-index:1200;
+    background:rgba(255,248,251,.78);
+    backdrop-filter:blur(5px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    opacity:0;
+    pointer-events:none;
+    transition:.25s ease;
+}
+
+.segredo-overlay.ativo{
+    opacity:1;
+    pointer-events:all;
+}
+
+.segredo-caixa{
+    position:relative;
+    width:min(92vw, 390px);
+    min-height:230px;
+    background:white;
+    border:4px dashed #ffc8dd;
+    border-radius:22px;
+    padding:32px 28px;
+    text-align:center;
+    box-shadow:0 16px 40px rgba(255,105,180,.28);
+    transform:translateY(12px) rotate(-1deg);
+    transition:.25s ease;
+    overflow:hidden;
+}
+
+.segredo-overlay.ativo .segredo-caixa{
+    transform:translateY(0) rotate(-1deg);
+}
+
+.segredo-caixa::before,
+.segredo-caixa::after{
+    content:"";
+    position:absolute;
+    width:78px;
+    height:24px;
+    background:rgba(255,229,160,.85);
+    border:1px solid rgba(230,185,92,.35);
+    top:12px;
+}
+
+.segredo-caixa::before{
+    left:-18px;
+    transform:rotate(-28deg);
+}
+
+.segredo-caixa::after{
+    right:-18px;
+    transform:rotate(28deg);
+}
+
+.segredo-kicker{
+    font-family:'Patrick Hand', cursive;
+    color:#ff9ac6;
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.segredo-caixa h2{
+    font-family:'Patrick Hand', cursive;
+    color:#ff69b4;
+    font-size:30px;
+    line-height:1.1;
+}
+
+.segredo-texto{
+    color:#999;
+    font-size:14px;
+    margin-top:10px;
+}
+
+.segredo-acoes{
+    position:relative;
+    min-height:84px;
+    margin-top:24px;
+}
+
+.segredo-acoes button{
+    border:none;
+    border-radius:16px;
+    padding:11px 28px;
+    font-family:'Quicksand', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    transition:background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+
+.segredo-sim{
+    position:absolute;
+    left:52px;
+    top:18px;
+    background:#ff69b4;
+    color:white;
+    box-shadow:0 8px 16px rgba(255,105,180,.28);
+    transition:left .22s ease, top .22s ease, transform .18s ease, background .2s ease;
+}
+
+.segredo-sim.fugindo{
+    transform:rotate(6deg) scale(1.04);
+}
+
+.segredo-nao{
+    position:absolute;
+    right:52px;
+    top:18px;
+    background:#fff4fa;
+    color:#c9457e;
+    border:2px solid #ffd6ea;
+}
+
+.segredo-nao:hover,
+.segredo-nao:focus-visible{
+    background:#ff69b4;
+    color:white;
+    outline:none;
+}
+
 @media (max-width: 480px){
 
     .secreta-fotos{
@@ -771,6 +977,7 @@ footer p{
         grid-template-areas:
             "banner"
             "sobre"
+            "mural"
             "sidebar"
             "galeria"
             "diario"
@@ -783,6 +990,11 @@ footer p{
         position:static;
         max-width:280px;
         margin:0 auto;
+    }
+
+    .segredo-disfarcado{
+        right:14px;
+        bottom:14px;
     }
 }
 
@@ -852,5 +1064,17 @@ footer p{
     .post-head{
         flex-direction:column;
         gap:4px;
+    }
+
+    .segredo-caixa{
+        min-height:260px;
+    }
+
+    .segredo-sim{
+        left:28px;
+    }
+
+    .segredo-nao{
+        right:28px;
     }
 }

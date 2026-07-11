@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const senhaErro = document.getElementById('senha-erro');
     const secretaOverlay = document.getElementById('secreta-overlay');
     const secretaFechar = document.getElementById('secreta-fechar');
+    const segredoBotao = document.getElementById('segredo-disfarcado');
+    const segredoOverlay = document.getElementById('segredo-overlay');
+    const segredoCaixa = document.querySelector('.segredo-caixa');
+    const segredoAcoes = document.getElementById('segredo-acoes');
+    const segredoSim = document.getElementById('segredo-sim');
+    const segredoNao = document.getElementById('segredo-nao');
+    const segredoTexto = document.getElementById('segredo-texto');
 
     if (!gif || !senhaOverlay || !secretaOverlay) return;
 
@@ -84,5 +91,78 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     secretaFechar.addEventListener('click', fecharSecreta);
+
+    if (segredoBotao && segredoOverlay && segredoCaixa && segredoAcoes && segredoSim && segredoNao) {
+        let fugas = 0;
+
+        segredoBotao.addEventListener('click', abrirSegredo);
+        segredoNao.addEventListener('click', fecharSegredo);
+        segredoSim.addEventListener('mouseenter', fugirDoUsuario);
+        segredoSim.addEventListener('focus', fugirDoUsuario);
+        segredoSim.addEventListener('click', fugirDoUsuario);
+        segredoSim.addEventListener('touchstart', fugirDoUsuario, { passive:false });
+
+        segredoOverlay.addEventListener('click', (e) => {
+            if (e.target === segredoOverlay) fecharSegredo();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && segredoOverlay.classList.contains('ativo')) {
+                fecharSegredo();
+            }
+        });
+
+        function abrirSegredo() {
+            fugas = 0;
+            segredoTexto.textContent = 'escolha com sabedoria.';
+            if (segredoSim.parentElement !== segredoAcoes) {
+                segredoAcoes.insertBefore(segredoSim, segredoNao);
+            }
+            segredoSim.style.position = '';
+            segredoSim.style.left = '';
+            segredoSim.style.top = '';
+            segredoSim.style.zIndex = '';
+            segredoSim.classList.remove('fugindo');
+            segredoOverlay.classList.add('ativo');
+            segredoOverlay.setAttribute('aria-hidden', 'false');
+        }
+
+        function fecharSegredo() {
+            segredoOverlay.classList.remove('ativo');
+            segredoOverlay.setAttribute('aria-hidden', 'true');
+        }
+
+        function fugirDoUsuario(e) {
+            if (e.type === 'touchstart') e.preventDefault();
+
+            const botaoRect = segredoSim.getBoundingClientRect();
+            const margem = 18;
+            const maxLeft = Math.max(margem, window.innerWidth - botaoRect.width - margem);
+            const maxTop = Math.max(margem, window.innerHeight - botaoRect.height - margem);
+
+            const left = Math.round(margem + Math.random() * (maxLeft - margem));
+            const top = Math.round(margem + Math.random() * (maxTop - margem));
+
+            fugas++;
+            if (segredoSim.parentElement !== segredoOverlay) {
+                segredoOverlay.appendChild(segredoSim);
+            }
+            segredoSim.style.position = 'fixed';
+            segredoSim.style.left = `${left}px`;
+            segredoSim.style.top = `${top}px`;
+            segredoSim.style.zIndex = '1301';
+            segredoSim.classList.add('fugindo');
+
+            const frases = [
+                'opa, nao tao facil assim.',
+                'quase... mas o segredo corre rapido.',
+                'ta determinado hein.',
+                'o botao esta timido hoje.'
+            ];
+
+            segredoTexto.textContent = frases[Math.min(fugas - 1, frases.length - 1)];
+            setTimeout(() => segredoSim.classList.remove('fugindo'), 180);
+        }
+    }
 
 });

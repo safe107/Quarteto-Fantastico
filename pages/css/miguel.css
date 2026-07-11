@@ -27,11 +27,26 @@ main{
     grid-template-areas:
         "banner  banner"
         "sobre   sobre"
+        "painel  painel"
         "sidebar galeria"
         "voltar  voltar"
         "musica  musica"
         "footer  footer";
     gap:30px;
+}
+
+.banner::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(90deg, transparent, rgba(57,255,136,.08), transparent);
+    transform:translateX(-100%);
+    animation: sweep 5s linear infinite;
+}
+
+@keyframes sweep{
+    to{ transform:translateX(100%); }
 }
 
 /* ===== Banner ===== */
@@ -164,6 +179,73 @@ main{
 .stat-fill{
     height:100%;
     background: linear-gradient(90deg, #39ff88, #a855f7);
+}
+
+/* ===== Painel de comandos ===== */
+
+.painel{
+    grid-area:painel;
+    background:#0b0410;
+    border:1px solid #39ff88;
+    box-shadow: 0 0 20px rgba(57,255,136,.18);
+    padding:26px;
+    position:relative;
+}
+
+.painel::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:2px;
+    background:linear-gradient(90deg, #39ff88, #a855f7, #39ff88);
+}
+
+.painel h2{
+    color:#39ff88;
+    font-size:18px;
+    margin-bottom:18px;
+}
+
+.comandos{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+}
+
+.comando{
+    min-height:145px;
+    border:1px solid rgba(168,85,247,.75);
+    background:linear-gradient(180deg, #100617, #08030c);
+    padding:18px;
+    position:relative;
+    overflow:hidden;
+    transition:.2s;
+}
+
+.comando:hover{
+    border-color:#39ff88;
+    transform:translateY(-4px);
+    box-shadow:0 0 18px rgba(57,255,136,.25);
+}
+
+.comando span{
+    color:#39ff88;
+    font-size:12px;
+}
+
+.comando strong{
+    display:block;
+    color:#c084fc;
+    margin:10px 0;
+    font-size:16px;
+}
+
+.comando p{
+    color:#cbb8ec;
+    line-height:1.55;
+    font-size:14px;
 }
 
 /* ===== Galeria ===== */
@@ -315,6 +397,7 @@ footer{
         grid-template-areas:
             "banner"
             "sobre"
+            "painel"
             "sidebar"
             "galeria"
             "voltar"
@@ -336,6 +419,10 @@ footer{
     .sobre{
         flex-direction:column;
         text-align:center;
+    }
+
+    .comandos{
+        grid-template-columns:1fr;
     }
 }
 

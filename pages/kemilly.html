@@ -218,6 +218,12 @@
                 </a>
             </div>
 
+            <div class="selinhos">
+                <span>cute</span>
+                <span>diary</span>
+                <span>besties</span>
+            </div>
+
             <!-- COLOQUE O GIF DO GATINHO AQUI -->
             <div class="gif-gatinho" id="gif-secreto" title="???">
                 <img src="../img/galeria/gatinho.gif" alt="">
@@ -241,6 +247,8 @@
         </footer>
 
     </main>
+
+    <button class="segredo-disfarcado" id="segredo-disfarcado" aria-label="abrir segredo">?</button>
 
     <!-- ===== Modal de senha (aparece depois de 3 cliques no gif) ===== -->
     <div class="senha-overlay" id="senha-overlay">
@@ -283,6 +291,19 @@
 
         </div>
 
+    </div>
+
+    <!-- ===== Segredo brincalhao do canto inferior ===== -->
+    <div class="segredo-overlay" id="segredo-overlay" aria-hidden="true">
+        <div class="segredo-caixa" role="dialog" aria-modal="true" aria-labelledby="segredo-titulo">
+            <p class="segredo-kicker">psiu...</p>
+            <h2 id="segredo-titulo">entao vc quer saber o meu segredo?</h2>
+            <p class="segredo-texto" id="segredo-texto">escolha com sabedoria.</p>
+            <div class="segredo-acoes" id="segredo-acoes">
+                <button class="segredo-sim" id="segredo-sim">sim</button>
+                <button class="segredo-nao" id="segredo-nao">nao</button>
+            </div>
+        </div>
     </div>
 
     <script src="../js/script.js"></script>

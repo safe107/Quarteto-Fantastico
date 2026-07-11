@@ -28,12 +28,23 @@ main{
     grid-template-areas:
         "banner  banner"
         "sobre   sobre"
+        "loadout sidebar"
         "galeria sidebar"
         "quests  sidebar"
         "voltar  voltar"
         "musica  musica"
         "footer  footer";
     gap:30px;
+}
+
+.banner::after{
+    content:"";
+    display:block;
+    width:100%;
+    height:8px;
+    margin-top:22px;
+    background:repeating-linear-gradient(90deg, #ff7a30 0 12px, #ffd23f 12px 24px, #c2410c 24px 36px);
+    box-shadow:0 0 12px rgba(255,122,48,.55);
 }
 
 /* ===== Banner ===== */
@@ -228,6 +239,72 @@ main{
 
 .online{
     color:#ff7a30;
+}
+
+/* ===== Loadout / Habilidades ===== */
+
+.loadout{
+    grid-area: loadout;
+    background:#241008;
+    border:4px solid #ffd23f;
+    box-shadow: 0 0 0 4px #1a0805, 0 0 20px rgba(255,210,63,.28);
+    padding:25px;
+}
+
+.loadout h2{
+    font-family:'Press Start 2P', monospace;
+    font-size:13px;
+    color:#ffd23f;
+    margin-bottom:18px;
+}
+
+.badges{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:14px;
+}
+
+.badge{
+    position:relative;
+    min-height:130px;
+    background:#1a0805;
+    border:2px solid #c2410c;
+    padding:16px;
+    overflow:hidden;
+    transition:.2s;
+}
+
+.badge:hover{
+    border-color:#ffd23f;
+    transform:translateY(-4px);
+    box-shadow:0 0 16px rgba(255,210,63,.32);
+}
+
+.badge-icone{
+    display:inline-flex;
+    width:28px;
+    height:28px;
+    align-items:center;
+    justify-content:center;
+    background:#ff7a30;
+    color:#1a0805;
+    border:2px solid #ffd23f;
+    font-family:'Press Start 2P', monospace;
+    font-size:10px;
+    margin-bottom:10px;
+}
+
+.badge strong{
+    display:block;
+    color:#ffd9b3;
+    font-size:19px;
+}
+
+.badge p{
+    margin-top:8px;
+    color:#a67c5a;
+    font-size:16px;
+    line-height:1.35;
 }
 
 /* ===== Galeria (Inventário) ===== */
@@ -493,14 +570,31 @@ main{
 
 .gif-slot{
     margin-top:18px;
-    height:100px;
+    min-height:120px;
     border:2px dashed #ff7a30;
     display:flex;
+    flex-direction:column;
+    gap:6px;
     align-items:center;
     justify-content:center;
     color:#ff7a30;
     font-family:'Press Start 2P', monospace;
     font-size:10px;
+}
+
+.pikachu-card{
+    background:radial-gradient(circle at 50% 25%, rgba(255,210,63,.2), transparent 58%), #1a0805;
+}
+
+.pikachu-card img{
+    max-width:86px;
+    max-height:76px;
+    image-rendering:pixelated;
+    filter:drop-shadow(0 0 8px rgba(255,210,63,.65));
+}
+
+.pikachu-card span{
+    color:#ffd23f;
 }
 
 /* ===== Voltar / música / footer ===== */
@@ -565,6 +659,7 @@ footer{
         grid-template-areas:
             "banner"
             "sobre"
+            "loadout"
             "sidebar"
             "galeria"
             "quests"
@@ -589,6 +684,10 @@ footer{
     .ficha{ min-width:100%; }
 
     .bio{ min-width:100%; }
+
+    .badges{
+        grid-template-columns:1fr;
+    }
 
     .fotos{
         grid-template-columns:repeat(2, 1fr);
